@@ -25,9 +25,11 @@ public class EmitLog {
 //        声明一个交换机
         channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.FANOUT,true);
 
-        String message = "这是一条广播的消息！";
-        channel.basicPublish(EXCHANGE_NAME,"",null,message.getBytes());
-        System.out.println(" [x] Sent '" + message + "'");
+        for (int i = 0; i < 10; i++) {
+            String message = "这是一条广播的消息:" + i + "!";
+            channel.basicPublish(EXCHANGE_NAME,"",null,message.getBytes());
+            System.out.println(" [x] Sent '" + message + "'");
+        }
     }
 
 }
