@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>simple-01</module>
+        <module>springboot-example</module>
     </modules>
 
     <properties>
